@@ -30,20 +30,22 @@ public:
    expr operator=(const expr&);  // assignment (=), copys one expression tree to another
 
 
-// Initializers
-   bool initString(char * str);                 // pases string to lex / yacc parser, returns false if format not valid
-   void initPolynomial(double * consts, int n); // initalizes a degree nth polynomial with given constants
-   void initFourier(double * consts, int n);    // initalizes a fourier series with  terms
-   void initRandom(int size=-1);                // randomly fill tree
+// Initializers Part 1
+   bool initString(char * str);                       // pases string to lex / yacc parser, and initializes tree. returns false if format not valid
+   void initPolynomial(double * consts, int degree);  // initalizes a polynomial with given constants. consts of length degree + 1.
+   void initFourier(double * consts, int len);        // initalizes a fourier series with len terms
+   void initRandom(int size=-1);                      // randomly fill tree with operands and constants. If size >= 1, size is max amount of vertices in tree.
    
 
 // Initialziers Part 2
-// a_i must be a tree with only varaibles i and x.
-// i being the index which turns into a constant, x being an evaluatable varaible
-// initSeries(a_i, 0, n) with a_i = x^n would be equivalent to initPolynomial({1, ..., 1}, n)
-   bool initSeries(const expr& a_i, int n);                 // creates a n+1 termed series using a_i          
-   bool initProduct(const expr& a_i, int n);                // creates a n+1 termed product using a_i
-   bool initWithOperand(const expr& a_i, int opInd, int l, int u); // creates a n termed product 
+/* 
+ * a_i must be a tree with only varaibles i and x.
+ * i being the index which turns into a constant, x being an evaluatable varaible
+ * initSeries(a_i, 0, n) with a_i = x^n would be equivalent to initPolynomial({1, ..., 1}, n)
+ */
+   bool initSeries(const expr& a_i, int l, int u);                // creates a n+1 termed series using a_i          
+   bool initProduct(const expr& a_i, int l, int u);               // creates a n+1 termed product using a_i
+   bool initWithOperand(const expr& a_i, int opInd, int l, int u);// creates a n termed product 
    bool initNested(const expr&, int constInd, int opInd, int n); 
    
 // Call private map methods to get indicies
