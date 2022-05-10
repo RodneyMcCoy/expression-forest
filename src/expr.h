@@ -2,7 +2,7 @@
  *
  * Rodney McCoy 
  * rbmj2001@outlook.com
- * https://github.com/RodneyMcCoy/expression-tree/edit/main/src/expr.h
+ * https://github.com/RodneyMcCoy/expression-tree
  *
  * Expression Tree Class Interface.
  */
