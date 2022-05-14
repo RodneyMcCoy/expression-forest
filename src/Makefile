@@ -6,3 +6,13 @@
 # 
 #  Makefile used to build and test the library.
 
+build:
+  echo "Build Static Library"
+
+test:
+  echo "Run Test"
+
+parser:
+  echo "build parser"
+
+  
