@@ -23,7 +23,7 @@ private:
 	node * root=NULL;
 	int next_id;
 	
-	long double * vals=NULL;
+	void ** vals=NULL;
 	int length;
 
 public:
@@ -35,8 +35,8 @@ public:
 	bool insert(char * label);
 	bool remove(char * label);
   
-	long double lookup(char * label);
-	long double lookup(int id);
+	void * lookup(char * label);
+	void * lookup(int id);
 	
 	bool inDict(char * label);
 	bool inDict(int id);
