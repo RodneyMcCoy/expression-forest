@@ -22,8 +22,9 @@ private:
 		node * right;
 	}
 	node * root=NULL;
-   
-	Data * vals=NULL;
+	int next_id;
+	
+	long double * vals=NULL;
 	int length;
 
 public:
@@ -35,10 +36,10 @@ public:
 	bool insert(char * label);
 	bool remove(char * label);
   
-	Data lookup(char * label);
-	Data operator[](char * label);
-	Data lookup(int id);
-	Data operator[](int id);
+	long double lookup(char * label);
+	long double operator[](char * label);
+	long double lookup(int id);
+	long double operator[](int id);
 };
 
 
