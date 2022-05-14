@@ -37,6 +37,11 @@ public:
   
 	long double lookup(char * label);
 	long double lookup(int id);
+	
+	bool inDict(char * label);
+	bool inDict(int id);
+	
+	void printSymbols();
 };
 
 
