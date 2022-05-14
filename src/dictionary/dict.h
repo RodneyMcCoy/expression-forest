@@ -27,7 +27,7 @@ private:
 	int length;
 
 public:
-// Constructors, Destructors, and other Overloaded Operators
+// Constructors, Destructors, and Overloaded Operators
 	dict();
 	~dict();
 	dict operator=(const dict&);  // assignment (=), copys one dictionary to another
