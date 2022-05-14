@@ -30,6 +30,8 @@ private:
    dict operands;
    
    char * treeLabel;
+   
+   void evaluateSubExpr(char ** treeLabels); // for nested expr trees. Throws error if a nest expr tree has label contained in treeLabels
 
 public:
 // ----- MAIN FUNCTIONALITY -----
@@ -44,7 +46,6 @@ public:
    bool assign(char * label, long double val);    // Assigns the leaf label the value val
    bool assign(int label, long double val);       // Assings the leaf with index label the value val
    
-  
    
 
 // ----- OTHERS -----
