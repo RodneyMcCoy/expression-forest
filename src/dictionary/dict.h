@@ -11,7 +11,6 @@
 #define DICT_H
 
 
-template <typename Data>
 class dict {
 private:
 	// This is an AVL tree
