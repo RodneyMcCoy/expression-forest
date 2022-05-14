@@ -7,26 +7,43 @@
  * Expression Tree Class Interface.
  */
 
+#ifndef EXPR_H
+#define EXPR_H
 
 class expr {
 private:
    typedef struct node {
-      int id;
+      signed short int id;
       node * left;
       node * right;
    }
    node * root;
-
-   map operands;
-   double * operands;
-   map leafs;
-   double * leafs;
+   
+   dict leafs<long double>;
+   dict funcs<long double (*f)(long double, long double)>; 
    
    char * treeLabel;
 
 public:
-// Constructors, Destructors, and Overloaded Operators
-   expr(char * str = NULL);      // construct tree. If arg given, calls initString
+// ----- MAIN FUNCTIONALITY -----
+ 
+// Evaluate Expr Tree
+   long double operator()();
+   long double operator()(char * label, long double val); // Apply assign with label, then evaluate tree
+   long double operator()(int label, long double val);    // Apply assign with label, then evaluate tree
+   
+ 
+// Assigns values to leaves in tree
+   bool assign(char * label, long double val);    // Assigns the leaf label the value val
+   bool assign(int label, long double val);       // Assings the leaf with index label the value val
+   
+  
+   
+
+// ----- OTHERS -----
+   
+// Constructors, Destructors, and other Overloaded Operators
+   expr(char * str = NULL);      // construct tree. If arg given, calls initString with str
    ~expr();                      // manualy deallocate each vertex in tree
    expr operator=(const expr&);  // assignment (=), copys one expression tree to another
 
@@ -44,21 +61,14 @@ public:
    int getLeafIndex(char * label);
    int getOperandIndex(char * label);
 
-
-// Assigns values to leaves in tree
-   bool assign(char * label, double val);    // Assigns the leaf label the value val
-   bool assign(int label, double val);       // Assings the leaf with index label the value val
-
-   
-// DFS the tree and evalute given saved constants in the map
-   double evaluate();
-   
    
 // Check format of expr tree
-   bool isProperFormat(char * label, char ** consts); // returns false if label doesnt match trees label, or a single string in consts isn't contained in the map
+   bool isProperFormat(char * label, char ** consts); // returns false if label doesnt match trees label, or a single string in consts isn't contained in the dict
    
   
 // Optimize
-   expr & optimizeOther();
-   void optimizeSelf();
+   expr & simplifyOther(bool rm_vars=false);
+   void sipmlifySelf(bool rm_vars=false);
 };
+
+#endif
