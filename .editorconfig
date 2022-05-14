@@ -1,3 +1,0 @@
-# Na, i want 3 sized tabs
-[*.{l, y, cpp, h}]
-indent_size = 3
