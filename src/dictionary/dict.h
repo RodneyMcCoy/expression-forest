@@ -10,6 +10,10 @@
 #ifndef DICT_H
 #define DICT_H
 
+typedef struct entry {
+	void * value;
+	unsigned char flag;
+};
 
 class dict {
 private:
@@ -25,10 +29,6 @@ private:
 	
 	
 	// Array: converts id (int) into dictionary entry
-	typedef struct entry {
-		void * value;
-		unsigned char flag;
-	};
 	entry * entries=NULL;
 	int length;
 
