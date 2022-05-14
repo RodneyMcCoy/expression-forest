@@ -20,14 +20,7 @@ private:
    node * root;
    
    
-   
-// templates are cringe, cause declaration and definition have to be in same file, so instead, 
-// we have a dict that uses a AVL tree to map strings onto ids, and an array that maps id's onto void *'s
-
-   // Void * is either: a long double which stores a var / const (id > 0) or reference to another expression tree (id < 0)
-   dict leafs;
-   // Void * is either: a binary function pointer (id > 0), or a unary function pointer (id < 0) 
-   dict operands;
+   dict references;
    
    char * treeLabel;
    
