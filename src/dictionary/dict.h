@@ -13,7 +13,7 @@
 
 class dict {
 private:
-	// This is an AVL tree
+	// This is an AVL tree: converts label (string) to id (int)
 	typedef struct node {
 		char * label;
 		unsigned short int id;
@@ -23,7 +23,13 @@ private:
 	node * root=NULL;
 	int next_id;
 	
-	void ** vals=NULL;
+	
+	// Array: converts id (int) into dictionary entry
+	typedef struct entry {
+		void * value;
+		unsigned char flag;
+	};
+	entry * entries=NULL;
 	int length;
 
 public:
@@ -32,11 +38,11 @@ public:
 	~dict();
 	dict operator=(const dict&);  // assignment (=), copys one dictionary to another
 
-	bool insert(char * label);
+	bool insert(char * label, unsigned char flag=0);
 	bool remove(char * label);
   
-	void * lookup(char * label);
-	void * lookup(int id);
+	entry & lookup(char * label);
+	entry & lookup(int id);
 	
 	bool inDict(char * label);
 	bool inDict(int id);
