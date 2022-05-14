@@ -19,8 +19,10 @@ private:
    }
    node * root;
    
-   dict leafs<long double>;
-   dict funcs<long double (*f)(long double, long double)>; 
+   // templates are cringe, cause declaration and definition have to be in same file, 
+   // so instead, we have a union of long doubles, unary function pt, and binary function pt
+   dict leafs;
+   dict funcs; 
    
    char * treeLabel;
 
