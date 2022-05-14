@@ -36,9 +36,7 @@ public:
 	bool remove(char * label);
   
 	long double lookup(char * label);
-	long double operator[](char * label);
 	long double lookup(int id);
-	long double operator[](int id);
 };
 
 
