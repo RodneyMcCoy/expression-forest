@@ -18,8 +18,11 @@ private:
     int size;
 public:
 // Constructors and Destructors
-    vector();
-    vector(T * data, int n);
+    vector() : data:(null), size(0)
+    vector(T * vals, int n) {
+        data = vals;
+        size = n;
+    }
     ~vector();
     
     
@@ -27,11 +30,7 @@ public:
     bool add(T val);
     bool remove(T val);
     bool containedIn(T val);
-    
-    
-// Iterator Design Pattern
-    void iterator();
-    const T & next();
+    void print();
 };
 
 
