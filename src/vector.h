@@ -4,7 +4,7 @@
  * rbmj2001@outlook.com
  * https://github.com/RodneyMcCoy/expression-tree
  *
- * Interface for a class that maps strings to integers and vice versa.
+ * Template Class for (non linked list) vector type. Implimented via inclusion model. Interface and Implimentation stored here
  */
 
 #ifndef VECTOR_H
@@ -17,10 +17,16 @@ private:
     int size;
 public:
     vector();
+    vector(T * data, int n);
     ~vector();
     
-    void add(T val);
+    bool add(T val);
+    bool remove(T val);
+    bool containedIn(T val);
+    
+    friend function vec;
 };
 
+vector<T> vec(T * data, int n);
 
 #endif
