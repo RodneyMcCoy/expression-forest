@@ -37,13 +37,13 @@ private:
 		unsigned short int id;
 		node * left;
 		node * right;
-	}
-	node * root=NULL;
+	};
+	node * root;
 	int next_id;
 	
 	
 	// Array: converts id (int) into dictionary entry
-	entry * entries=NULL;
+	entry * entries;
 	int length;
 
 public:
