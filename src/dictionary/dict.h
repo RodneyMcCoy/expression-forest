@@ -11,8 +11,22 @@
 #define DICT_H
 
 typedef struct entry {
-	void * value;
-	unsigned char flag;
+	union value {
+		long double val;
+		long double (*unary_op)(long double);
+		long double (*binary_op)(long double, long double);
+		typedef struct expr_ref {
+			expr * f;
+			vector<char *> * refs;
+		}
+	};
+	
+	enum flag : unsigned char {
+		val,
+		unary_op,
+		binary_op,
+		expr_ref,
+	};
 };
 
 class dict {
