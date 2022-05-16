@@ -10,7 +10,7 @@
 #ifndef EXPR_H
 #define EXPR_H
 
-#includet "array.h"
+#include "array.h"
 #include "dict.h"
 
 class expr {
