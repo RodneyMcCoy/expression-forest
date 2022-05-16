@@ -10,6 +10,7 @@
 #ifndef EXPR_H
 #define EXPR_H
 
+#includet "array.h"
 #include "dict.h"
 
 class expr {
@@ -37,7 +38,7 @@ private:
    
    char * treeLabel;
    
-   void evaluateSubExpr(char ** treeLabels); // for nested expr trees. Throws error if a nest expr tree has label contained in treeLabels
+   void evaluateSubExpr(array<expr *> parents); // for nested expr trees. Throws error if a nest expr tree has label contained in treeLabels
 
 public:
 // ----- MAIN FUNCTIONALITY -----
