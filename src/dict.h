@@ -4,48 +4,47 @@
  * rbmj2001@outlook.com
  * https://github.com/RodneyMcCoy/expression-tree
  *
- * Interface for a class that maps strings to integers and vice versa.
+ * Template class interface that defines a bijection between strings <-> internal id <-> entry type. 
+ * Implimented using explicit instantiation model
  */
+
 
 #ifndef DICT_H
 #define DICT_H
 
-typedef struct entry {
-	union value {
-		long double val;
-		long double (*unary_op)(long double);
-		long double (*binary_op)(long double, long double);
-		typedef struct expr_ref {
-			expr * f;
-			vector<char *> * refs;
-		}
-	};
-	
-	enum flag : unsigned char {
-		val,
-		unary_op,
-		binary_op,
-		expr_ref,
-	};
-};
 
+#include "expr.h"
+#include "array.h"
+
+
+
+template <typename Data>
 class dict {
+// ----- AVL TREE: CONVERTS STRING <-> INT -----
 private:
-	// This is an AVL tree: converts label (string) to id (int)
 	typedef struct node {
 		char * label;
 		unsigned short int id;
 		node * left;
 		node * right;
-	};
+	} node;
 	node * root;
 	int next_id;
-	
-	
-	// Array: converts id (int) into dictionary entry
-	entry * entries;
-	int length;
 
+	
+// ----- DATA: CONVERTS INT <-> ENTRY -----
+public:
+   typedef struct entry {
+      Data data;
+      unsigned char flag;
+   } entry;
+
+
+private:
+	array<entry> entries;
+
+
+// ----- METHODS -----
 public:
 // Constructors, Destructors, and Overloaded Operators
 	dict();

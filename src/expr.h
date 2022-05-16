@@ -10,17 +10,30 @@
 #ifndef EXPR_H
 #define EXPR_H
 
+#include "dict.h"
+
 class expr {
 private:
    typedef struct node {
       signed short int id;
       node * left;
       node * right;
-   }
+   };
    node * root;
    
    
-   dict references;
+   union leaf {
+      long double value;
+      expr * expression;
+   };
+
+   union parent {
+      long double (*unary) (long double);
+      long double (*binary) (long double, long double);
+   };
+
+   dict<leaf> * consts;
+   dict<parent> * funcs;
    
    char * treeLabel;
    

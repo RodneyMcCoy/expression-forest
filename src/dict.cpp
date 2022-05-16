@@ -4,7 +4,11 @@
  * rbmj2001@outlook.com
  * https://github.com/RodneyMcCoy/expression-tree
  *
- * Implimentation for a class that maps strings to integers and vice versa.
+ * Template class implimentation. 
+ * Implimented using explicit instantiation model
  */
 
 #include "dict.h"
+
+
+template class dict<long double>;
