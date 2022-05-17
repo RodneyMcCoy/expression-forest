@@ -21,8 +21,9 @@ private:
    Type * data;
    unsigned int cur_size;
    unsigned int max_size;
+
 public:
-// Constructors and Destructors
+// ----- Constructors and Destructors -----
    array(unsigned int n=10) {
       data = (Type *) malloc (sizeof(Type) * n);
       max_size = n;
@@ -42,7 +43,12 @@ public:
 
 
 
-// Basic Operations
+// ----- Size Operations -----
+   int size() {
+      return cur_size;
+   }
+
+
    bool resize(unsigned int new_size) {
          Type * temp = (Type *) realloc(data, sizeof(Type) * new_size );
          if(temp == NULL) {
@@ -54,6 +60,24 @@ public:
    }
 
 
+   int capacity() {
+      return max_size;
+   }
+
+
+   bool empty() {
+      return cur_size == 0;
+   }
+
+
+   bool shrink_to_fit() {
+      return this->resize(cur_size);
+   }
+
+
+
+
+// ----- Basic Operations -----
    bool insert(Type val) {
       if(cur_size < max_size) {
          data[cur_size] = val;

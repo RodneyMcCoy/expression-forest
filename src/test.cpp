@@ -12,5 +12,26 @@
 #include "dict.h"
 
 int main() {
-   dict<double> d;
+   dict d;
+   char a[] = "Hello";
+   char b[] = "World";
+   char c[] = "!";
+   char e[] = "This";
+   char f[] = "Is";
+   char g[] = "Super";
+   char h[] = "cool";
+
+   d.print();
+   d.printTree();
+
+   d.insert(a);
+   d.insert(b);
+   d.insert(c);
+   d.insert(e);
+   d.insert(f);
+   d.insert(g);
+   d.insert(h);
+
+   d.print();
+   d.printTree();
 }
