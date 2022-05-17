@@ -1,5 +1,5 @@
 # expression-tree
-A C++ class that implements expression trees.
+A C++ class that implements expression trees. **Development in Progress**
 
 
 # for further reference
