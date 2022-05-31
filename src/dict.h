@@ -12,8 +12,6 @@
 #define DICT_H
 
 
-#include "array.h"
-
 class dict {
 private:
 
@@ -29,10 +27,10 @@ private:
    
 
    // AVL tree operations
-   void singleRight(node * cur);
-   void singleLeft(node * cur);
-   void doubleLeft(node * cur);
-   void doubleRight(node * cur);
+   // void singleRight(node * cur);
+   // void singleLeft(node * cur);
+   // void doubleLeft(node * cur);
+   // void doubleRight(node * cur);
 
 
    // internal operations that extend basic public methods

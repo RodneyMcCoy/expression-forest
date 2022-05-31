@@ -13,7 +13,7 @@
 #include "dict.h"
 
 
-// ----- PRIVATE METHODS -----
+
 
 void dict::deleteTree(node * cur) {
    if(cur->left != NULL) {
@@ -100,11 +100,6 @@ void dict::printTree(node * cur, int depth) {
 }
 
 
-
-
-
-
-// ----- PUBLIC METHODS -----
 
 dict::~dict() {
    if(root != NULL) {
