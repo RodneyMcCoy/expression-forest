@@ -8,11 +8,11 @@
  */
 
 #include <iostream>
-#include "array.h"
 #include "dict.h"
 
+
 int main() {
-   dict d;
+   array<char *> d;
    char a[] = "Hello";
    char b[] = "World";
    char c[] = "!";
@@ -22,7 +22,6 @@ int main() {
    char h[] = "cool";
 
    d.print();
-   d.printTree();
 
    d.insert(a);
    d.insert(b);
@@ -33,5 +32,4 @@ int main() {
    d.insert(h);
 
    d.print();
-   d.printTree();
 }

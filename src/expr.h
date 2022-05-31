@@ -10,18 +10,16 @@
 #ifndef EXPR_H
 #define EXPR_H
 
-#include <complex>
+
 #include "array.h"
 #include "dict.h"
 
-typedef long double real;
-typedef std::complex<long double> comp;
 
+template <typename Type>
 class expr {
 private:
 
-// ----- EXPRESSION TREE DATA STRUCTURE -----
-
+// ----- Expression Tree Data Structure -----
    typedef struct node {
       unsigned short int id;
       node * left;
@@ -32,61 +30,31 @@ private:
 
 
 
-
-// ----- EXTERNAL REFERNECES ----
-
-   // leaf constant values
-   dict vals;
-   array<real> * vals_r;
-   array<comp> * vals_c;
-   
-
-   // leaf expression tree references
-   dict expr_ref;
-   array<expr *> * expr_refs;
-
-
-   // parent unary function value
-   dict unary;
-   array<real (*) (real)> * unary_r;
-   array<comp (*) (comp)> * unary_c;
-
-
-   // parent binary function value
-   dict binary;
-   array<real (*) (real, real)> * binary_r;
-   array<comp (*) (comp, comp)> * binary_c;
+// ----- References ----
+   dict< Type > vals;
+   dict< expr<Type >* > expr_ref;
+   dict< auto(*)(auto) > * unary;
+   dict< auto(*)(auto, auto)> * binary;
 
 
 
-
+// ----- Other Members and Methods -----
    char * treeLabel;
-
-   bool isReal;
-   
-   void evaluateSubExpr(array<expr *> parents); // for nested expr trees. Throws error if a nest expr tree has label contained in treeLabel
+   void evaluateSubExpr(array< expr<Type> * > parents); // for nested expr trees. Throws error if a nest expr tree has label contained in treeLabel
 
 public:
 
 // ----- MAIN FUNCTIONALITY -----
 
    // Operator for evaluating the Expression Tree (IF SET TO REAL)
-   real operator()();
-   real operator()(char * label, real val);  // Apply assign with label, then evaluate tree
-   real operator()(int label, real val);     // Apply assign with label, then evaluate tree
+   Type operator()();
+   Type operator()(char * label, Type val);  // Apply assign with label, then evaluate tree
 
-
-   // Operator for evaluating the Expression Tree (IF SET TO COMPLEX)
-   comp operator()(int i);
-   comp operator()(char * label, comp val);  // Apply assign with label, then evaluate tree
-   comp operator()(int label, comp val);     // Apply assign with label, then evaluate tree
 
 
    // Assigns values to leaves in tree
-   bool assign(char * label, real val);   // Assigns the leaf label the value val
-   bool assign(int label, real val);      // Assings the leaf with index label the value val
-   bool assign(char * label, comp val);   // Assigns the leaf label the value val
-   bool assign(int label, comp val);      // Assings the leaf with index label the value val
+   bool assign(char * label, Type val);   // Assigns the leaf label the value val
+   bool assign(int label, Type val);      // Assings the leaf with index label the value val
 
    
    
@@ -119,5 +87,9 @@ public:
    expr & simplifyOther(bool rm_vars=false);
    void sipmlifySelf(bool rm_vars=false);
 };
+
+
+#include "expr.cpp"
+
 
 #endif

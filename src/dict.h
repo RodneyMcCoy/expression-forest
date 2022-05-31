@@ -4,7 +4,8 @@
  * rbmj2001@outlook.com
  * https://github.com/RodneyMcCoy/expression-tree
  *
- * Template class interface that defines a bijection between strings <-> int
+ * Initializes a map between symbols (strings) <-> internal id (int) <-> Type type (Type)
+ * This is made more complicated then needed for O(1) lookup time complexity 
  */
 
 
@@ -12,70 +13,52 @@
 #define DICT_H
 
 
+#include "array.h"
+#include "sym_table.h"
+
+
+template <typename Type>
 class dict {
 private:
 
-   // AVL tree: converts string <-> int
-	typedef struct node {
-		char * label;
-		unsigned short int id;
-		node * left;
-		node * right;
-	} node;
-	node * root;
-	unsigned short int next_id;
-   
-
-   // AVL tree operations
-   // void singleRight(node * cur);
-   // void singleLeft(node * cur);
-   // void doubleLeft(node * cur);
-   // void doubleRight(node * cur);
-
-
-   // internal operations that extend basic public methods
-   // Constructors, Destructors, and Overloaded Operators
-   void deleteTree(node * cur);
-
-   // Lookup Operation
-
-
-   // Other Operations
-   void insert(node * cur, char * label, int strDepth = 0);
-   void remove(node * cur, char * label, int strDepth = 0);
-   void remove(node * cur, int id);
-   
-   
-   // Print Methods
-   void print(node * cur);
-   void printTree(node * cur, int depth);
+   sym_table * syms;
+   array<Type> * data;
+   array<int> * removed_ids;
 
 
 public:
 
-
-   // Constructors, Destructors, and Overloaded Operators
-	dict() : root(NULL), next_id(0) {}
-	~dict();
-	dict & operator=(const dict&);  // assignment (=), copys one dictionary to another
-   
-
-   // Lookup Operation
-   int operator[](char * label); // overload for look up
-	int lookup(char * label);
+// ----- Constructors, Destructors, and Overloaded Operators -----
+   dict(unsigned int n=10) ;
+   ~dict();
+	dict<Type> & operator=(const dict<Type>& other);  // Assignment
 
 
-   // Other Operations
-	void insert(char * label);
-	void remove(char * label);
-   void remove(int id);
-   bool empty() {return next_id == 0;}
+
+// ----- Basic Operations -----
+   bool insert(char * label);
+   bool insert(char * label, Type val);
+
+   bool remove(Type val);
+   bool remove(unsigned int id);
+
+   Type & lookup(char * label);
+   Type & lookup(int * val);
+
+   Type & operator[](char * label); // literaly just overloaded lookup method
+   Type & operator[](int * id);
 
 
-   // Print Methods
-	void print();
-   void printTree();
+
+// ----- Debug and Print Methods -----
+   void print() ;
+
+
+
 };
+
+
+#include "dict.cpp"
 
 
 #endif
