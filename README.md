@@ -6,3 +6,10 @@ A C++ class that implements expression trees. **Development in Progress**
 https://opensource.stackexchange.com/questions/4875/open-source-license-to-prevent-commercial-use#:~:text=There%20is%20now%20a%20license,namely%20the%20Commons%20Clause%20License.
 
 https://commonsclause.com/
+
+
+
+# 3 Main Parts of this Library
+* Parser
+* Dictionary Template
+* Expression Tree Template
