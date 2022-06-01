@@ -1,4 +1,4 @@
-/* test.cpp
+/* testDict.cpp
  *
  * Rodney McCoy 
  * rbmj2001@outlook.com
@@ -8,7 +8,7 @@
  */
 
 #include <iostream>
-#include "dict.h"
+#include "include/dict.h"
 
 
 int main() {
@@ -18,7 +18,7 @@ int main() {
    buffer[1] = '\0';
 
    double i;
-   for(i = 50; i < 100; i++) {
+   for(i = 97; i < 97+26; i++) {
       buffer[0] = (char)i;
       d.insert(buffer, i/2);
    }
