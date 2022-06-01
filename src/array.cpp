@@ -30,6 +30,10 @@ array<Type>::~array() {
 template <typename Type>
 array<Type> & array<Type>::operator=(const array<Type> & other) {
    this->resize(other.max_size);
+   for(int i = 0; i < other.cur_size; i++) {
+      this->data[i] = other->data[i];
+   }
+   this->cur_size = other.cur_size;
 }; 
 
 
