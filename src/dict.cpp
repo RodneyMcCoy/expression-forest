@@ -9,6 +9,7 @@
  */
 
 
+#include <iostream>
 #include "array.h"
 #include "sym_table.h"
 
@@ -18,24 +19,25 @@
 
 template <typename Type>
 dict<Type>::dict(unsigned int n=10) {
-   syms = new sym_table;
-   data = new array<Type>;
-   removed_ids = new array<int>;
+   syms = sym_table();
+   data = array<Type>();
+   removed_ids = array<int>();
 }
 
 
 template <typename Type>
 dict<Type>::~dict() {
-   delete(syms);
-   delete(data);
-   delete(removed_ids);
+   delete(this);
 }
 
 
 template <typename Type>
 dict<Type> & dict<Type>::operator=(const dict<Type> & other) {
    // stuff should be done here
-
+   this->syms = other.syms;
+   this->data = other.data;
+   this->removed_ids = other.removed_ids; 
+   return this;
 }
 
 
@@ -45,19 +47,21 @@ dict<Type> & dict<Type>::operator=(const dict<Type> & other) {
 
 template <typename Type>
 bool dict<Type>::insert(char * label) {
-   
+   syms.insert(label);
+   data.insert();
 }
 
 
 template <typename Type>
 bool dict<Type>::insert(char * label, Type val) {
-
+   syms.insert(label);
+   data.insert(val);
 }
 
 
 template <typename Type>
 bool dict<Type>::remove(Type val) {
-
+   for(int i = 0; i < )
 }
 
 
@@ -65,6 +69,16 @@ template <typename Type>
 bool dict<Type>::remove(unsigned int id) {
 
 }
+
+
+template <typename Type>
+bool dict<Type>::remove(char * label) {
+   int id = syms.lookup(label);
+   syms.remove(label);
+   removed_ids.insert(id);
+
+}
+
 
 
 template <typename Type>
@@ -81,12 +95,12 @@ Type & dict<Type>::lookup(int * val) {
 
 template <typename Type>
 Type & dict<Type>::operator[](char * label) {
-
+   return this->lookup(label);
 }
 
 template <typename Type>
 Type & dict<Type>::operator[](int * id) {
-
+   return this->lookup(label);
 }
 
 
@@ -96,5 +110,10 @@ Type & dict<Type>::operator[](int * id) {
 
 template <typename Type>
 void dict<Type>::print() {
-
+   std::cout << "syms: ";
+   syms.print();
+   std::cout << "\ndata: ";
+   data.print();
+   std::cout << "\nRemoved Ids: ";
+   removed_ids.print();
 }

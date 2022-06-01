@@ -32,6 +32,7 @@ public:
 
 // ----- Basic Operations -----
    bool insert(Type val);
+   bool insert(); // literaly just increments cur_size
    bool remove(Type val);
    Type lookup(int val);
    

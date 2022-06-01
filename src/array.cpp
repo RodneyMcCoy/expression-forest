@@ -15,7 +15,7 @@
 
 template <typename Type>
 array<Type>::array(unsigned int n) {
-   data = (Type *) malloc (sizeof(Type) * n);
+   data = (Type *) calloc (sizeof(Type) * n);
    max_size = n;
    cur_size = 0;
 }
@@ -28,8 +28,8 @@ array<Type>::~array() {
 
 
 template <typename Type>
-array<Type> & array<Type>::operator=(const array<Type>&) {
-   return this;
+array<Type> & array<Type>::operator=(const array<Type> & other) {
+   this->resize(other.max_size);
 }; 
 
 
@@ -50,6 +50,24 @@ bool array<Type>::insert(Type val) {
       }
 
       data[cur_size] = val;
+      cur_size++;
+      max_size = new_max;
+      return 0;
+   }
+}
+
+
+template <typename Type>
+bool array<Type>::insert() {
+   if(cur_size < max_size) {
+      cur_size++;
+      return 0;
+   } else {
+      unsigned int new_max = max_size * (max_size < 100 ? 5 : 2 );
+      if(this->resize(new_max) == -1) {
+         return -1;
+      }
+
       cur_size++;
       max_size = new_max;
       return 0;

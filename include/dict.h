@@ -21,9 +21,9 @@ template <typename Type>
 class dict {
 private:
 
-   sym_table * syms;
-   array<Type> * data;
-   array<int> * removed_ids;
+   sym_table syms;
+   array<Type> data;
+   array<int> removed_ids;
 
 
 public:
@@ -41,6 +41,8 @@ public:
 
    bool remove(Type val);
    bool remove(unsigned int id);
+   bool remove(char * label);
+
 
    Type & lookup(char * label);
    Type & lookup(int * val);

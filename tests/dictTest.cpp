@@ -1,4 +1,4 @@
-/* testDict.cpp
+/* dictTest.cpp
  *
  * Rodney McCoy 
  * rbmj2001@outlook.com
@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include "include/dict.h"
+
 
 
 int main() {
@@ -24,4 +25,5 @@ int main() {
    }
 
    d.print();
+   return 1;
 }
