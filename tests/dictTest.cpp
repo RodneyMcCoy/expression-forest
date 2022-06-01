@@ -8,7 +8,7 @@
  */
 
 #include <iostream>
-#include "include/dict.h"
+#include "dict.h"
 
 
 
