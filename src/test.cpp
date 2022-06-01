@@ -12,24 +12,16 @@
 
 
 int main() {
-   array<char *> d;
-   char a[] = "Hello";
-   char b[] = "World";
-   char c[] = "!";
-   char e[] = "This";
-   char f[] = "Is";
-   char g[] = "Super";
-   char h[] = "cool";
+   dict<double> d;
+   
+   char buffer[2];
+   buffer[1] = '\0';
 
-   d.print();
-
-   d.insert(a);
-   d.insert(b);
-   d.insert(c);
-   d.insert(e);
-   d.insert(f);
-   d.insert(g);
-   d.insert(h);
+   double i;
+   for(i = 50; i < 100; i++) {
+      buffer[0] = (char)i;
+      d.insert(buffer, i/2);
+   }
 
    d.print();
 }
