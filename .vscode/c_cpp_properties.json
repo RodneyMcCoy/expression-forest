@@ -4,9 +4,9 @@
             "name": "Win32",
             "includePath": [
                 "${default}",
-                "/src/",
-                "/include/",
-                "/tests/"
+                "include",
+                "src",
+                "tests"
             ],
             "defines": [
                 "_DEBUG",
