@@ -31,7 +31,7 @@ public:
 // ----- Constructors, Destructors, and Overloaded Operators -----
    dict(unsigned int n=10) ;
    ~dict();
-	dict<Type> & operator=(const dict<Type>& other);  // Assignment
+	dict<Type> & operator=(const dict<Type>& other);  // Copy Assignment
 
 
 
