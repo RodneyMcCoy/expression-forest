@@ -34,6 +34,7 @@ array<Type> & array<Type>::operator=(const array<Type> & other) {
       this->data[i] = other->data[i];
    }
    this->cur_size = other.cur_size;
+   return this;
 }; 
 
 
