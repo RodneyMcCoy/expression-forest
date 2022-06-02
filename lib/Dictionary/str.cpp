@@ -6,3 +6,11 @@
  *
  * A string class
  */
+ 
+ 
+#include <ostream>
+
+#include "str.h"
+ 
+ 
+std::ostream& operator<<(std::ostream& out, const str& other); // Converting to string for iostream

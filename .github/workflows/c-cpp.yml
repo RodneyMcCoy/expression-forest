@@ -25,5 +25,5 @@ jobs:
     - name: Test Dict Template
       run: make dictTest
 
-    - name: make clean
+    - name: Clean Test Executables
       run: make clean
