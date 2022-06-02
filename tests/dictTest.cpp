@@ -8,22 +8,70 @@
  */
 
 #include <iostream>
+#include "array.h"
+#include "sym_table.h"
 #include "dict.h"
 
 
-int main() {
-   dict<double> d;
-   
-   char buffer[2];
-   buffer[1] = '\0';
+char * buf[] = 
+{
+	"a",  "b",  "c",  "d",  "e",  "f",  "g",  "h",  "i",  "j",  "k",  "l",  "m", 
+	"n",  "o",  "p",  "q",  "r",  "s",  "t",  "u",  "v",  "w",  "x",  "y",  "z", 
+	"aa", "bb", "cc", "dd", "ee", "ff", "gg", "hh", "ii", "jj", "kk", "ll", "mm", 
+	"nn", "oo", "pp", "qq", "rr", "ss", "tt", "uu", "vv", "ww", "xx", "yy", "zz"
+};
+	
 
-   double i;
-   for(i = 97; i < 97+26; i++) {
-      buffer[0] = (char)i;
-      d.insert(buffer, i/2);
+// Complicated unit testing is cringe. So this program returns false if any data structure has unintended values
+
+
+int main() {
+	/* ----- Array Tests ----- */
+
+	array<int> a_test;
+
+	for(int i = 0; i < 150; i++) { a_test.push(i); }
+	
+	for(int i = 0; i < 150; i++) {
+		if(a_test.lookup(i) != i) { return -1; }
+	}
+	
+	a_test.print();
+	
+	for(int i = 149; i > 1; i++) {
+		if(a_test.pop() != i) { return -1; }
+	}
+	
+	a_test.print();
+	
+	
+
+	
+	/* ----- Symbol Table Test ----- */
+	
+	sym_table s_test;
+	
+	for(int i = 0; i < 52; i++) {
+		s_test.insert(buf[i]);
+	}
+	
+	s_test.print();
+	
+	return 0;
+	
+	
+	
+	
+	/* ----- Dictionary Tests ----- */
+	
+   dict<double> d_test;
+   
+   for(int i = 0; i < 52; i++) {
+      d_test.insert(buf[i], (double)i + .01);
    }
 
-   d.print();
+   d_test.print();
+	
    return 0;
 }
  

@@ -56,7 +56,7 @@ public:
 
 // ----- Basic Operations -----
 
-   bool insert(Type val) {
+   bool push(Type val) {
 		if(cur_size < max_size) {
 			data[cur_size] = val;
 			cur_size++;
@@ -75,7 +75,7 @@ public:
 	}
 
 
-   bool insert() {
+   bool push() {
 		if(cur_size < max_size) {
 			cur_size++;
 			return true;
@@ -92,22 +92,13 @@ public:
 	}
 	
 	
-   bool removeAndShift(Type val) {
-		int i = 0;
-		while(i < cur_size && val != data[i]) { i++; }
-		if(val == data[i]) {
-			for(; i < cur_size-1; i++) {
-				data[i] = data[i+1];
-			}
-			cur_size--;
-			return 1;
-		} else {
-			return 0;
-		}
+   Type pop() {
+		cur_size--;
+		return data[cur_size+1];
 	}
 	
 	
-   Type lookup(int val) {
+   Type lookup(unsigned int val) {
 		if(val < max_size) {
 			return data[val];
 		}

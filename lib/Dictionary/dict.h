@@ -79,7 +79,7 @@ public:
    bool remove(unsigned int id) {
 		// char * label = syms.lookup(id);
 		// syms.remove(label);
-		removed_ids.insert(id);
+		removed_ids.push(id);
 		return true;
 	}
 

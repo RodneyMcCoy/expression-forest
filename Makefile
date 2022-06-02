@@ -6,7 +6,8 @@ default:
 
 test:
 	g++ $(CFLAGS) $(INCLUDES) tests/dictTest.cpp lib/Dictionary/sym_table.cpp -o dictTest
-	./dictTest
+	./dictTest > results.txt
+	diff -s tests/dictTestResults.txt results.txt
 	
 clean:
 	$(RM) dictTest
