@@ -5,7 +5,6 @@ default:
 	echo "will be implimented in the future"
 
 test:
-	cls
 	g++ $(CFLAGS) $(INCLUDES) tests/dictTest.cpp -o dictTest
 	./dictTest
 	
