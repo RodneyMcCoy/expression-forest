@@ -8,9 +8,7 @@
  */
 
 #include <iostream>
-#include "array.h"
-#include "sym_table.h"
-#include "dict.h"
+#include "str.h"
 
 
 char * buf[] = 
@@ -21,21 +19,10 @@ char * buf[] =
 	"nn", "oo", "pp", "qq", "rr", "ss", "tt", "uu", "vv", "ww", "xx", "yy", "zz"
 };
 	
-
-// Complicated unit testing is cringe. So this program returns false if any data structure has unintended values
-
-
 int main() {
+	/* ----- String Tests ----- */
 	
-	/* ----- Dictionary Tests ----- */
 	
-   dict<double> d_test;
-   
-   for(int i = 0; i < 52; i++) {
-      d_test.insert(buf[i], (double)i + .01);
-   }
-
-   d_test.print();
 	
    return 0;
 }

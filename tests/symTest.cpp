@@ -8,9 +8,7 @@
  */
 
 #include <iostream>
-#include "array.h"
 #include "sym_table.h"
-#include "dict.h"
 
 
 char * buf[] = 
@@ -26,17 +24,16 @@ char * buf[] =
 
 
 int main() {
+	/* ----- Symbol Table Test ----- */
 	
-	/* ----- Dictionary Tests ----- */
+	sym_table s_test;
 	
-   dict<double> d_test;
-   
-   for(int i = 0; i < 52; i++) {
-      d_test.insert(buf[i], (double)i + .01);
-   }
-
-   d_test.print();
+	for(int i = 0; i < 52; i++) {
+		s_test.insert(buf[i]);
+	}
 	
-   return 0;
+	s_test.print();
+	
+	return 0;
+	
 }
- 

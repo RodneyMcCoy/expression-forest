@@ -13,11 +13,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-#    - name: configure
-#      run: ./tests/configure
     - name: make
       run: make
-    - name: make test
-      run: make test
+
+    - name: Test Array Template
+      run: make arrayTest
+    - name: Test String (str) Class
+      run: make strTest
+    - name: Test Symbol Table Class
+      run: make symTest
+    - name: Test Dict Template
+      run: make dictTest
+
     - name: make clean
       run: make clean

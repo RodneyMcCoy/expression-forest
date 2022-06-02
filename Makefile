@@ -3,14 +3,27 @@ CFLAGS= -Wall
 
 default:
 	echo "will be implimented in the future"
-
-test:
-	g++ $(CFLAGS) $(INCLUDES) tests/dictTest.cpp lib/Dictionary/sym_table.cpp -o dictTest
-	./dictTest > results.txt
-	diff -s tests/dictTestResults.txt results.txt
 	
 clean:
+	$(RM) arrayTest
+	$(RM) strTest
+	$(RM) symTest
 	$(RM) dictTest
 
-dict.o:
-	g++ -c dict.cpp
+
+# ----- TESTS ------
+arrayTest:
+	g++ $(CFLAGS) $(INCLUDES) tests/arrayTest.cpp -o arrayTest
+	./arrayTest
+	
+strTest:
+	g++ $(CFLAGS) $(INCLUDES) tests/strTest.cpp lib/Dictionary/str.cpp -o strTest
+	./strTest
+	
+symTest:
+	g++ $(CFLAGS) $(INCLUDES) tests/symTest.cpp lib/Dictionary/sym_table.cpp -o symTest
+	./symTest
+
+dictTest:
+	g++ $(CFLAGS) $(INCLUDES) tests/dictTest.cpp -o dictTest
+	./dictTest
