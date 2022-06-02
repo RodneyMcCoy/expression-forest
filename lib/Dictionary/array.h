@@ -44,7 +44,7 @@ public:
 	
 	array & operator=(const array & other) { // COPY ASSIGNMENT
 		this->resize(other.max_size);
-		for(int i = 0; i < other.cur_size; i++) {
+		for(unsigned int i = 0; i < other.cur_size; i++) {
 			this->data[i] = other.data[i];
 		}
 		this->cur_size = other.cur_size;
@@ -92,7 +92,7 @@ public:
 	}
 	
 	
-   bool remove(Type val) {
+   bool removeAndShift(Type val) {
 		int i = 0;
 		while(i < cur_size && val != data[i]) { i++; }
 		if(val == data[i]) {

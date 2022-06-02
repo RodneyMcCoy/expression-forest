@@ -5,7 +5,7 @@ default:
 	echo "will be implimented in the future"
 
 test:
-	g++ $(CFLAGS) $(INCLUDES) tests/dictTest.cpp -o dictTest
+	g++ $(CFLAGS) $(INCLUDES) tests/dictTest.cpp lib/Dictionary/sym_table.cpp -o dictTest
 	./dictTest
 	
 clean:
