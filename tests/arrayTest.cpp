@@ -29,6 +29,7 @@ int main() {
 	
 	a_test.print();
 	
+	cout << "test finished\n";
 	
    return 0;
 }
