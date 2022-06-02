@@ -23,13 +23,12 @@ int main() {
 	
 	a_test.print();
 	
-	for(int i = 149; i > 1; i++) {
-		if(a_test.pop() != i) { return -1; }
+	for(int i = 149; i > 5; i--) {
+		if(a_test.pop() != i) { return -i; }
 	}
 	
 	a_test.print();
-	
-	std::cout << "test finished\n";
+
 	
    return 0;
 }

@@ -94,7 +94,7 @@ public:
 	
    Type pop() {
 		cur_size--;
-		return data[cur_size+1];
+		return data[cur_size];
 	}
 	
 	
