@@ -29,7 +29,7 @@ int main() {
 	sym_table s_test;
 	
 	for(int i = 0; i < 52; i++) {
-		s_test.insert(buf[i]);
+		//s_test.insert(buf[i]);
 	}
 	
 	s_test.print();
