@@ -32,7 +32,7 @@ int main() {
    dict<double> d_test;
    
    for(int i = 0; i < 52; i++) {
-      d_test.insert(buf[i], (double)i + .01);
+      // d_test.insert(buf[i], (double)i + .01);
    }
 
    d_test.print();
