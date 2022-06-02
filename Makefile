@@ -1,11 +1,16 @@
+INCLUDES=-I./lib/Dictionary -I./lib/ExpressionTree -I./lib/Parser -I./tests
+CFLAGS= -Wall
+
 default:
-	echo "This will build the library in the future"
+	echo "will be implimented in the future"
 
 test:
-	g++ -std=c++17 tests/dictTest.cpp src/dict.cpp -o dictTest
-	chmod +x dictTest
+	cls
+	g++ $(CFLAGS) $(INCLUDES) tests/dictTest.cpp -o dictTest
 	./dictTest
-	$(RM) dictTest
-
+	
 clean:
 	$(RM) dictTest
+
+dict.o:
+	g++ -c dict.cpp

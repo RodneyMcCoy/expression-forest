@@ -8,22 +8,24 @@
  */
 
 #include <iostream>
-#include "dict.h"
-
+// #include "dict.h"
+#include "array.h"
 
 
 int main() {
-   dict<double> d;
+   array<double> d;
    
-   char buffer[2];
-   buffer[1] = '\0';
+   //char buffer[2];
+   //buffer[1] = '\0';
 
    double i;
    for(i = 97; i < 97+26; i++) {
-      buffer[0] = (char)i;
-      d.insert(buffer, i/2);
+      //buffer[0] = (char)i;
+      //d.insert(buffer, i/2);
+		d.insert(i/2);
    }
 
    d.print();
-   return 1;
+   return 0;
 }
+ 
