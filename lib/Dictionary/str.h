@@ -13,7 +13,7 @@
 
 
 #include <string> // only for converting std::string to str class
-
+#include <ostream>
 
 class str {
 private:
@@ -30,7 +30,7 @@ public:
 	str(std::string);
 	~str();
 	str & operator=(const str & other);  // Copy Assignment
-	std::ostream& operator<<(std::ostream& out, const Date& d); // Converting to string for iostream
+	std::ostream& operator<<(std::ostream& out, const str& other); // Converting to string for iostream
  
 	
 	
