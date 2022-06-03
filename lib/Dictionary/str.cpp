@@ -126,4 +126,12 @@ char * str::to_string() {
 	rt[len] = '\0';
 	return rt;
 }
-	
+
+
+
+
+/* ----- Accessor ----- */
+
+bool empty() {
+	return len == 0;
+}

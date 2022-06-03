@@ -26,13 +26,19 @@ const char * buf[] =
 int main() {
 	/* ----- Symbol Table Test ----- */
 	
-	sym_table s_test;
+	sym_table s1, s2;
 	
 	for(int i = 0; i < 52; i++) {
-		//s_test.insert(buf[i]);
+		s1.insert(str(buf[i]));
 	}
 	
-	s_test.print();
+	s1.print();
+	
+	s2 = s1;
+	
+	s2.insert(str("abcdefg"));
+	
+	s1.print();
 	
 	return 0;
 	

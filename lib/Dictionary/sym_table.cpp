@@ -26,12 +26,17 @@ void sym_table::deleteTree(node * cur) {
 }
 
 
-void sym_table::assignTree(node * _this, node * other) {
-   if(cur->left != NULL) { this->deleteTree(cur->left); }
+node * sym_table::assignTree(node * other) {
+	node * cur = new node*;
+	
+	cur->label = other->label;
+	cur->id = other->id;
+	
+   if(other->left != NULL) { cur->left = this->assignTree(other->left); }
 
-   if(cur->right != NULL) { this->deleteTree(cur->right); }
+   if(other->right != NULL) { cur->right = this->assignTree(other->right); }
 
-   delete(cur);
+	return cur;
 }
 
 
@@ -102,9 +107,16 @@ sym_table::~sym_table() {
 
 
 sym_table & sym_table::operator=(const sym_table & other) {
-   // WORK NEEDS TO BE DONE HERE ------------
-
-   return *this;
+	if(other.root == NULL) {
+		root = NULL;
+		next_id = 0;
+		return *this;
+	}
+	next_id = other.next_id;
+	
+	root = assignTree(other.root);
+	
+	return *this;
 }   
 
    
@@ -115,7 +127,7 @@ sym_table & sym_table::operator=(const sym_table & other) {
 bool sym_table::insert(str label) {
    if(root == NULL) {
       root = new node {label, next_id++, NULL, NULL};
-   } else if (label[0] == '\0') {
+   } else if (label.empty()) {
       std::cerr << "Label given is empty, not label inserted";
    } else {
       this->insert(root, label);
