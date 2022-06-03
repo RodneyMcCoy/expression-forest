@@ -50,6 +50,7 @@ int main() {
 	
 	if(smallString != str("a")) {return -1;}
 	
+	std::cout << smallString << " " << str("a") << "\n";
 	
    return 0;
 }

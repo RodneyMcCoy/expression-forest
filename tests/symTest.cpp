@@ -20,8 +20,6 @@ const char * buf[] =
 };
 	
 
-// Complicated unit testing is cringe. So this program returns false if any data structure has unintended values
-
 
 int main() {
 	/* ----- Symbol Table Test ----- */
@@ -32,9 +30,11 @@ int main() {
 		s1.insert(str(buf[i]));
 	}
 	
+	s1.insert(str("__"));
+	
 	s1.print();
 	
-	for(int i = 10; i < 52; i++) {
+	for(int i = 10; i < 26; i++) {
 		s1.insert(str(buf[i]));
 	}
 	
@@ -44,7 +44,12 @@ int main() {
 	
 	s2.insert(str("abcdefg"));
 	
+	for(int i = 26; i < 52; i++) {
+		s1.insert(str(buf[i]));
+	}
+	
 	s1.print();
+	s2.print();
 	
 	return 0;
 	

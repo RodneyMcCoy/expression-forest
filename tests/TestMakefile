@@ -6,12 +6,10 @@ CFLAGS= -Wall
 # ----- MAKEFILE FOR TESTS ------
 arrayTest:
 	g++ $(CFLAGS) $(INCLUDES) tests/arrayTest.cpp -o arrayTest
-	chmod +x arrayTest
 	./arrayTest
 
 strTest:
 	g++ $(CFLAGS) $(INCLUDES) tests/strTest.cpp ./lib/Dictionary/str.cpp -o strTest
-	chmod +x strTest
 	./strTest
 
 symTest:
@@ -20,7 +18,6 @@ symTest:
 
 dictTest:
 	g++ $(CFLAGS) $(INCLUDES) tests/dictTest.cpp -o dictTest
-	chmod +x dictTest
 	./dictTest
 
 
