@@ -15,7 +15,7 @@
  
 std::ostream& operator<<(std::ostream& out, const str& other) {
 	for(int i = 0; i < other.len; i++) {
-		out << other[i];
+		out << other.data[i];
 	}
 	return out;
 }
