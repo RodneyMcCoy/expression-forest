@@ -39,7 +39,7 @@ private:
 
 // ----- Internal (Recursive) Destructor -----
    void deleteTree(node * cur);
-	void assignTree(node * _this, node * other);
+	node * assignTree(node * other);
 
 
 // ----- Internal (Recursive) Basic Operations -----
