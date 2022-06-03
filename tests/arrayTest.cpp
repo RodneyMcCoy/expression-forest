@@ -36,10 +36,13 @@ int main() {
 		if(a1.lookup(i) != a2.lookup(i)) { return -1; }
 	}
 	
+	if( !(a1.size() == 15 && a2.size() == 15) ) { return -1; }	
+   
+	a2.pop();
+	a2.push(-1);
 	
-	if(a1.size() == a2.size() == 15) {
-		return 0;
-	}	
-   return -1;
+	if( a1.lookup(14) == a2.lookup(14)) { return -1; }	
+
+	return 0;	
 }
  

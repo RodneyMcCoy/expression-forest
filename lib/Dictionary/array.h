@@ -43,11 +43,11 @@ public:
 	
 	
 	array & operator=(const array & other) { // COPY ASSIGNMENT
-		this->resize(other.max_size);
+		resize(other.max_size);
 		for(unsigned int i = 0; i < other.cur_size; i++) {
-			this->data[i] = other.data[i];
+			data[i] = other.data[i];
 		}
-		this->cur_size = other.cur_size;
+		cur_size = other.cur_size;
 		return *this;
 	}
 
@@ -63,7 +63,7 @@ public:
 			return true;
 		} else {
 			unsigned int new_max = max_size * (max_size < 100 ? 5 : 2 );
-			if(!this->resize(new_max)) {
+			if(!resize(new_max)) {
 				return false;
 			}
 
@@ -81,7 +81,7 @@ public:
 			return true;
 		} else {
 			unsigned int new_max = max_size * (max_size < 100 ? 5 : 2 );
-			if(!this->resize(new_max)) {
+			if(!resize(new_max)) {
 				return false;
 			}
 
@@ -122,7 +122,7 @@ public:
 
 
    bool shrink_to_fit() {
-		return this->resize(cur_size);
+		return resize(cur_size);
 	}
 
 

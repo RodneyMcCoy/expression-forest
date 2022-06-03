@@ -25,8 +25,8 @@ public:
 
 /* ----- Constructors, Destructors, Copy Assignment ----- */
 	str();
-	str(char *);
-	str(std::string);
+	str(const char * input);
+	str(std::string input);
 	~str();
 	str & operator=(const str & other);  // Copy Assignment
  
@@ -42,6 +42,7 @@ public:
 /* ----- Basic Operations ----- */
 	char lookup(unsigned int id);
 	char * to_string();
+	
 	
 	
 };
