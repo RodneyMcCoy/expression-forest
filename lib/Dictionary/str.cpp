@@ -14,7 +14,10 @@
  
  
 std::ostream& operator<<(std::ostream& out, const str& other) {
-	return out << other.to_string();
+	for(int i = 0; i < len; i++) {
+		out << other[i];
+	}
+	return out;
 }
 
 
