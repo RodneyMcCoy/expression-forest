@@ -11,7 +11,7 @@
 #ifndef STR_H
 #define STR_H
 
-
+#include <iostream>
 #include <string> // only for converting std::string to str class
 
 class str {
@@ -46,6 +46,8 @@ public:
 	char lookup(unsigned int id);
 	char * to_string();
 	
+	
+	void debug() {std::cout << len << " " << sum << " " << to_string() << "\n" ;}
 	
 	
 };

@@ -30,9 +30,12 @@ int main() {
 	std::string st("world!");
 	str s3(st);
 	
-	if(s2 != str(ch) || s3 != str(st) ) { return -1; }
-	
 	std::cout << "abcdefgcowabunga\n";
+	
+	s2.debug();
+	s3.debug();
+	
+	if(s2 != str(ch) || s3 != str(st) ) { return -1; }	
 
 	
 	if(s2 > s3) { return -1; }
