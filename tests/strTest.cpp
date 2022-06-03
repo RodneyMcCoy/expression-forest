@@ -24,9 +24,6 @@ int main() {
 	/* ----- String Tests ----- */
 	str s1;
 	
-	std::cout << "abcdefgcowabunga\n";
-
-	
 	const char * ch = "hello";
 	str s2(ch);
 	
@@ -34,6 +31,9 @@ int main() {
 	str s3(st);
 	
 	if(s2 != str(ch) || s3 != str(st) ) { return -1; }
+	
+	std::cout << "abcdefgcowabunga\n";
+
 	
 	if(s2 > s3) { return -1; }
 	if(s2 >= s3) { return -1; }
