@@ -12,12 +12,14 @@
 #define SYM_TABLE_H
 
 
+#include "str.h"
+
 class sym_table {
 private:
 
    // AVL tree: converts string <-> int
 	typedef struct node {
-		char * label;
+		str label;
 		unsigned short int id;
 		node * left;
 		node * right;
@@ -40,8 +42,8 @@ private:
 
 
 // ----- Internal (Recursive) Basic Operations -----
-   bool insert(node * cur, char * label, int strDepth = 0);
-   bool remove(node * cur, char * label, int strDepth = 0);
+   bool insert(node * cur, str & label, int strDepth = 0);
+   bool remove(node * cur, str & label, int strDepth = 0);
    bool remove(node * cur, int id);
    
    
@@ -60,10 +62,10 @@ public:
 
    
 // ----- Basic Operations -----
-	bool insert(char * label);
-	bool remove(char * label);
+	bool insert(str label);
+	bool remove(str label);
    bool remove(int id);
-	int lookup(char * label);
+	int lookup(str label);
 
 
 

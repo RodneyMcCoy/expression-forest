@@ -15,7 +15,7 @@ strTest:
 	./strTest
 
 symTest:
-	g++ $(CFLAGS) $(INCLUDES) tests/symTest.cpp ./lib/Dictionary/sym_table.cpp -o symTest
+	g++ $(CFLAGS) $(INCLUDES) tests/symTest.cpp ./lib/Dictionary/sym_table.cpp ./lib/Dictionary/str.cpp -o symTest
 	chmod +x symTest
 	./symTest
 

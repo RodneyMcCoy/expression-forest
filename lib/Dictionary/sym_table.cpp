@@ -34,7 +34,7 @@ void sym_table::deleteTree(node * cur) {
 
 // ----- Internal (Recursive) Basic Operations -----
 
-bool sym_table::insert(node * cur, char * label, int strDepth) {
+bool sym_table::insert(node * cur, str & label, int strDepth) {
    // insert
    if(cur == NULL) {
       std::cerr << "ERROR. CURRENT NODE IS NULL, WE SHOULDNT BE HERE\n";
@@ -72,7 +72,7 @@ bool sym_table::insert(node * cur, char * label, int strDepth) {
 }
 
 
-// bool remove(node * cur, char * label, int strDepth = 0);
+// bool remove(node * cur, str & label, int strDepth = 0);
 
 // bool remove(node * cur, int id);
    
@@ -133,7 +133,7 @@ sym_table & sym_table::operator=(const sym_table&) {
 
 // ----- Basic Operations -----
 
-bool sym_table::insert(char * label) {
+bool sym_table::insert(str label) {
    if(root == NULL) {
       root = new node {label, next_id++, NULL, NULL};
    } else if (label[0] == '\0') {
@@ -145,7 +145,7 @@ bool sym_table::insert(char * label) {
 }
 
 
-bool sym_table::remove(char * label) {
+bool sym_table::remove(str label) {
    // remove
    return true;
 }
@@ -156,7 +156,7 @@ bool sym_table::remove(int id) {
 }
 
 
-int sym_table::lookup(char * label) {
+int sym_table::lookup(str label) {
    // WORK NEEDS TO BE DONE HERE
    return 0;
 }

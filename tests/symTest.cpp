@@ -9,7 +9,7 @@
 
 #include <iostream>
 #include "sym_table.h"
-
+#include "str.h"
 
 const char * buf[] = 
 {
