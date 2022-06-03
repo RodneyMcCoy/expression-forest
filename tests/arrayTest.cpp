@@ -21,16 +21,17 @@ int main() {
 		if(a1.lookup(i) != i) { return -1; }
 	}
 	
-	a1.print();
+	// a1.print();
 	
 	for(int i = 149; i >= 15; i--) {
 		if(a1.pop() != i) { return -i; }
 	}
 	
-	a1.print();
+	// a1.print();
 
 
-	array<int> a2 = a1;
+	array<int> a2;
+	a2 = a1;
 	
 	for(int i = 0; i < 15; i++) {
 		if(a1.lookup(i) != a2.lookup(i)) { return -1; }
@@ -40,6 +41,9 @@ int main() {
    
 	a2.pop();
 	a2.push(-1);
+	
+	a1.print();
+	a2.print();
 	
 	if( a1.lookup(14) == a2.lookup(14)) { return -1; }	
 

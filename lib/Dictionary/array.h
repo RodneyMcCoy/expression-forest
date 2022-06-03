@@ -31,19 +31,19 @@ public:
 // ----- Constructors, Destructors, and Overloaded Operators -----
  
 	array(unsigned int n=10) {
-		data = (Type *) malloc (sizeof(Type) * n);
+		data = new Type[n];
 		max_size = n;
 		cur_size = 0;
 	}
 	
 	
    ~array() {
-		free(data);
+		delete(data);
 	}
 	
 	
 	array & operator=(const array & other) { // COPY ASSIGNMENT
-		resize(other.max_size);
+		this->resize(other.max_size);
 		for(unsigned int i = 0; i < other.cur_size; i++) {
 			data[i] = other.data[i];
 		}
@@ -63,7 +63,7 @@ public:
 			return true;
 		} else {
 			unsigned int new_max = max_size * (max_size < 100 ? 5 : 2 );
-			if(!resize(new_max)) {
+			if(!this->resize(new_max)) {
 				return false;
 			}
 
@@ -81,7 +81,7 @@ public:
 			return true;
 		} else {
 			unsigned int new_max = max_size * (max_size < 100 ? 5 : 2 );
-			if(!resize(new_max)) {
+			if(!this->resize(new_max)) {
 				return false;
 			}
 
@@ -99,7 +99,7 @@ public:
 	
 	
    Type lookup(unsigned int val) {
-		if(val < max_size) {
+		if(val < cur_size) {
 			return data[val];
 		}
 		return data[0];
@@ -111,18 +111,18 @@ public:
 // ----- Other Mutators -----
 
    bool resize(unsigned int new_size) {
-		Type * temp = (Type *) realloc(data, sizeof(Type) * new_size );
-		if(temp == NULL) {
-			std::cerr << "Realloc call in array class failed\n";
-			return false;
+		Type * temp = new Type[new_size];
+		for(unsigned int i = 0; i < cur_size; i++) {
+			temp[i] = data[i];
 		}
+		delete[] data;
 		data = temp;
 		return true;
 	}
 
 
    bool shrink_to_fit() {
-		return resize(cur_size);
+		return this->resize(cur_size);
 	}
 
 
