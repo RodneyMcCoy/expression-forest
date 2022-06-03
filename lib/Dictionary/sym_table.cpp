@@ -27,7 +27,7 @@ void sym_table::deleteTree(node * cur) {
 
 
 sym_table::node * sym_table::assignTree(node * other) {
-	node * cur = new node*;
+	node * cur = new node;
 	
 	cur->label = other->label;
 	cur->id = other->id;
