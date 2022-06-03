@@ -30,7 +30,6 @@ int main() {
 	std::string st("world!");
 	str s3(st);
 	
-	std::cout << "abcdefgcowabunga\n";
 	
 	s2.debug();
 	s3.debug();
@@ -45,7 +44,13 @@ int main() {
 	if(s2 > s3) { return -1; }
 	if(s2 >= s3) { return -1; }
 	if(s3 != s3) { return -1; }
-	std::cout << "finished successfully\n";
+	
+	
+	str smallString("a");
+	
+	if(smallString != str("a")) {return -1;}
+	
+	
    return 0;
 }
  

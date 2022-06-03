@@ -28,7 +28,13 @@ int main() {
 	
 	sym_table s1, s2;
 	
-	for(int i = 0; i < 52; i++) {
+	for(int i = 0; i < 10; i++) {
+		s1.insert(str(buf[i]));
+	}
+	
+	s1.print();
+	
+	for(int i = 10; i < 52; i++) {
 		s1.insert(str(buf[i]));
 	}
 	
