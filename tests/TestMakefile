@@ -5,22 +5,22 @@ CFLAGS= -Wall
 
 # ----- MAKEFILE FOR TESTS ------
 arrayTest:
-	g++ $(CFLAGS) $(INCLUDES) arrayTest.cpp -o arrayTest
+	g++ $(CFLAGS) $(INCLUDES) tests/arrayTest.cpp -o arrayTest
 	chmod +x arrayTest
 	./arrayTest
 
 strTest:
-	g++ $(CFLAGS) $(INCLUDES) strTest.cpp ../lib/Dictionary/str.cpp -o strTest
+	g++ $(CFLAGS) $(INCLUDES) tests/strTest.cpp ../lib/Dictionary/str.cpp -o strTest
 	chmod +x strTest
 	./strTest
 
 symTest:
-	g++ $(CFLAGS) $(INCLUDES) symTest.cpp ../lib/Dictionary/sym_table.cpp -o symTest
+	g++ $(CFLAGS) $(INCLUDES) tests/symTest.cpp ../lib/Dictionary/sym_table.cpp -o symTest
 	chmod +x symTest
 	./symTest
 
 dictTest:
-	g++ $(CFLAGS) $(INCLUDES) dictTest.cpp -o dictTest
+	g++ $(CFLAGS) $(INCLUDES) tests/dictTest.cpp -o dictTest
 	chmod +x dictTest
 	./dictTest
 

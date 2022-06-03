@@ -14,14 +14,14 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: make
-      run: make -f tests/TestMakefile -k build
+      run: make -f ./tests/TestMakefile -k build
     - name: Test Array Template
-      run: make -f tests/TestMakefile -k arrayTest
+      run: make -f ./tests/TestMakefile -k arrayTest
     - name: Test Str Class
-      run: make -f tests/TestMakefile -k strTest
+      run: make -f ./tests/TestMakefile -k strTest
     - name: Test Symbol Table Class
-      run: make -f tests/TestMakefile -k symTest
+      run: make -f ./tests/TestMakefile -k symTest
     - name: Test Dict Template
-      run: make -f tests/TestMakefile -k dictTest
+      run: make -f ./tests/TestMakefile -k dictTest
     - name: Clean Test Executables
-      run: make -f tests/TestMakefile -k clean
+      run: make -f ./tests/TestMakefile -k clean
