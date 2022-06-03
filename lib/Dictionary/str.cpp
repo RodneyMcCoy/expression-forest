@@ -13,7 +13,9 @@
 #include "str.h"
  
  
-// std::ostream& operator<<(std::ostream& out, const str& other); // Converting to string for iostream
+std::ostream& operator<<(std::ostream& out, const str& other) {
+	return out << other.to_string();
+}
 
 
 
