@@ -1,0 +1,38 @@
+INCLUDES= -I../lib/Dictionary -I../lib/ExpressionTree -I../lib/Parser
+CFLAGS= -Wall
+
+
+
+# ----- MAKEFILE FOR TESTS ------
+arrayTest:
+	g++ $(CFLAGS) $(INCLUDES) arrayTest.cpp -o arrayTest
+	chmod +x arrayTest
+	./arrayTest
+
+strTest:
+	g++ $(CFLAGS) $(INCLUDES) strTest.cpp ../lib/Dictionary/str.cpp -o strTest
+	chmod +x strTest
+	./strTest
+
+symTest:
+	g++ $(CFLAGS) $(INCLUDES) symTest.cpp ../lib/Dictionary/sym_table.cpp -o symTest
+	chmod +x symTest
+	./symTest
+
+dictTest:
+	g++ $(CFLAGS) $(INCLUDES) dictTest.cpp -o dictTest
+	chmod +x dictTest
+	./dictTest
+
+
+
+build:
+	echo "Build Here"
+
+
+
+clean:
+	$(RM) arrayTest
+	$(RM) strTest
+	$(RM) symTest
+	$(RM) dictTest
