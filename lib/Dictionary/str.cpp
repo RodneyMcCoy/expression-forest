@@ -132,6 +132,6 @@ char * str::to_string() {
 
 /* ----- Accessor ----- */
 
-bool empty() {
+bool str::empty() {
 	return len == 0;
 }
