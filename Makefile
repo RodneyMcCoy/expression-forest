@@ -21,6 +21,7 @@ strTest:
 	g++ $(CFLAGS) $(INCLUDES) tests/strTest.cpp lib/Dictionary/str.cpp -o strTest
 	chmod +x strTest
 	./strTest
+	echo "WEEEE"
 
 symTest:
 	g++ $(CFLAGS) $(INCLUDES) tests/symTest.cpp lib/Dictionary/sym_table.cpp -o symTest
