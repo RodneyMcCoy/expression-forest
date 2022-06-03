@@ -4,8 +4,10 @@
  * rbmj2001@outlook.com
  * https://github.com/RodneyMcCoy/expression-tree
  *
- * Expression Tree Class Interface.
+ * Expression Tree Class Interface. 
+ * Explict Instantiation Model Used.
  */
+
 
 #ifndef EXPR_H
 #define EXPR_H
