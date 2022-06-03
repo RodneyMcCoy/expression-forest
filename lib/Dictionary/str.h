@@ -33,9 +33,12 @@ public:
 	
 	
 /* ----- Comparison Operators ----- */
-	bool operator<(const str & other);
-	bool operator>(const str & other);
-	bool operator==(const str & other);
+	bool operator<(const str & other) ;
+	bool operator==(const str & other) ;
+	bool operator>(const str & other) ;
+	bool operator!=(const str & other) ;
+	bool operator>=(const str & other) ;
+	bool operator<=(const str & other) ;
 
 
 

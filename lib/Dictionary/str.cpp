@@ -19,11 +19,7 @@ std::ostream& operator<<(std::ostream& out, const str& other); // Converting to 
 
 /* ----- Constructors, Destructors, Copy Assignment ----- */
 
-str::str() {
-	buf = NULL;
-	len = 0;
-	sum = 0;
-}
+str::str() : buf(NULL), len(0), sum(0) { }
 
 
 str::str(const char * input) {
@@ -82,16 +78,6 @@ bool str::operator<(const str & other) {
 }
 
 
-bool str::operator>(const str & other) {
-	if (len > other.len) {return true;}
-	if (sum > other.sum) {return true;}
-	for(int i = 0; i < len; i++) {
-		if(buf[i] > other.buf[i]) {return true;}
-	}
-	return false;
-}
-
-
 bool str::operator==(const str & other) {
 	if (len != other.len) {return false;}
 	if (sum != other.sum) {return false;}
@@ -101,6 +87,25 @@ bool str::operator==(const str & other) {
 	return true;
 }
 
+
+bool str::operator>(const str & other) { 
+	return !(*this <= other); 
+}
+
+
+bool str::operator!=(const str & other) { 
+	return !(*this == other); 
+}
+
+
+bool str::operator>=(const str & other) { 
+	return (*this == other) || (*this > other); 
+}
+
+
+bool str::operator<=(const str & other) { 
+	return (*this == other) || (*this < other); 
+}
 
 
 

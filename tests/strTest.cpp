@@ -22,7 +22,7 @@ const char * buf[] =
 	
 int main() {
 	/* ----- String Tests ----- */
-	str s1();
+	str s1;
 	
 	const char * ch = "hello";
 	str s2(ch);
@@ -30,7 +30,7 @@ int main() {
 	std::string st("world!");
 	str s3(st);
 	
-	if(s2 != ch || s3 != st) { return -1; }
+	if(!(s2 == str(ch) && s3 == str(st)) ) { return -1; }
 	
 	if(s2 > s3) { return -1; }
 	
