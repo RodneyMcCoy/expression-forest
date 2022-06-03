@@ -24,6 +24,9 @@ int main() {
 	/* ----- String Tests ----- */
 	str s1;
 	
+	std::cout << "process started\n";
+
+	
 	const char * ch = "hello";
 	str s2(ch);
 	
