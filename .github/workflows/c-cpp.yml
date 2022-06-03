@@ -15,15 +15,13 @@ jobs:
     - uses: actions/checkout@v3
     - name: make
       run: make
-
     - name: Test Array Template
       run: make arrayTest
-    - name: Test String (str) Class
+    - name: Test Str Class
       run: make strTest
     - name: Test Symbol Table Class
       run: make symTest
     - name: Test Dict Template
       run: make dictTest
-
     - name: Clean Test Executables
       run: make clean

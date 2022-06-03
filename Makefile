@@ -19,7 +19,7 @@ arrayTest:
 strTest:
 	g++ $(CFLAGS) $(INCLUDES) tests/strTest.cpp lib/Dictionary/str.cpp -o strTest
 	./strTest
-	
+
 symTest:
 	g++ $(CFLAGS) $(INCLUDES) tests/symTest.cpp lib/Dictionary/sym_table.cpp -o symTest
 	./symTest
