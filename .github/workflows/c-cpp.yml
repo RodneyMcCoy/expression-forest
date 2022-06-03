@@ -13,15 +13,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: make
+    - name: make -k
       run: make
     - name: Test Array Template
-      run: make arrayTest
+      run: make -k arrayTest
     - name: Test Str Class
-      run: make strTest
+      run: make -k strTest
     - name: Test Symbol Table Class
-      run: make symTest
+      run: make -k symTest
     - name: Test Dict Template
-      run: make dictTest
+      run: make -k dictTest
     - name: Clean Test Executables
-      run: make clean
+      run: make -k clean
