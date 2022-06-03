@@ -1,4 +1,4 @@
-INCLUDES=-I./lib/Dictionary -I./lib/ExpressionTree -I./lib/Parser -I./tests
+INCLUDES= -I./lib/Dictionary -I./lib/ExpressionTree -I./lib/Parser -I./tests
 CFLAGS= -Wall
 
 default:
