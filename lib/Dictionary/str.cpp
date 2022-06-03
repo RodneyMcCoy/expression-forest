@@ -22,11 +22,9 @@
 str::str() : buf(NULL), len(0), sum(0) { }
 
 
-str::str(const char * input) {
+str::str(const char * input) : buf(NULL), len(0), sum(0) {
 	// Get Length
-	len = 0;
-	sum = 0;
-	while(input[len+1] != '\0') { 
+	while(input[len] != '\0') { 
 		sum += input[len];
 		len++;
 	}
@@ -38,9 +36,7 @@ str::str(const char * input) {
 }
 
 
-str::str(std::string input) {
-	len = input.length();
-	buf = new char[len];
+str::str(std::string input) : buf(new char[input.length()]), len(input.length()), sum(0) {
 	for(int i = 0; i < len; i++) {
 		sum += input[i];
 		buf[i] = input[i];
