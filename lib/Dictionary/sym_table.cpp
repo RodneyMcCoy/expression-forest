@@ -26,7 +26,7 @@ void sym_table::deleteTree(node * cur) {
 }
 
 
-node * sym_table::assignTree(node * other) {
+sym_table::node * sym_table::assignTree(node * other) {
 	node * cur = new node*;
 	
 	cur->label = other->label;
@@ -63,6 +63,7 @@ bool sym_table::insert(node * cur, str & label) {
          this->insert(cur->right, label);
       }
 	} 
+	return true;
 }
 
 

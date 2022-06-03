@@ -39,7 +39,7 @@ private:
 
 // ----- Internal (Recursive) Destructor -----
    void deleteTree(node * cur);
-	node * assignTree(node * other);
+	sym_table::node * assignTree(node * other);
 
 
 // ----- Internal (Recursive) Basic Operations -----
