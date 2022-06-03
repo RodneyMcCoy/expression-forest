@@ -46,9 +46,9 @@ public:
 	char lookup(unsigned int id);
 	char * to_string();
 	
-	
 	void debug() {std::cout << len << " " << sum << " " << to_string() << "\n" ;}
 	
+	friend std::ostream& operator<<(std::ostream& out, const str& other);
 	
 };
  
