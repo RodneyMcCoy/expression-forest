@@ -89,7 +89,7 @@ bool str::operator==(const str & other) {
 
 
 bool str::operator>(const str & other) { 
-	return !(*this <= other); 
+	return !(*this == other) && !(*this < other); 
 }
 
 
@@ -99,7 +99,7 @@ bool str::operator!=(const str & other) {
 
 
 bool str::operator>=(const str & other) { 
-	return (*this == other) || (*this > other); 
+	return !(*this < other);
 }
 
 
