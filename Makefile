@@ -3,7 +3,7 @@ CFLAGS= -Wall
 
 default:
 	echo "will be implimented in the future"
-	
+
 clean:
 	$(RM) arrayTest
 	$(RM) strTest
@@ -14,16 +14,20 @@ clean:
 # ----- TESTS ------
 arrayTest:
 	g++ $(CFLAGS) $(INCLUDES) tests/arrayTest.cpp -o arrayTest
+	chmod +x arrayTest
 	./arrayTest
-	
+
 strTest:
 	g++ $(CFLAGS) $(INCLUDES) tests/strTest.cpp lib/Dictionary/str.cpp -o strTest
+	chmod +x strTest
 	./strTest
 
 symTest:
 	g++ $(CFLAGS) $(INCLUDES) tests/symTest.cpp lib/Dictionary/sym_table.cpp -o symTest
+	chmod +x symTest
 	./symTest
 
 dictTest:
 	g++ $(CFLAGS) $(INCLUDES) tests/dictTest.cpp -o dictTest
+	chmod +x dictTest
 	./dictTest
