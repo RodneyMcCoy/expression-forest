@@ -22,7 +22,7 @@
 	
 int main() {
 	/* ----- String Tests ----- */
-	str s1;
+	str s1, _s1;
 	
 	const char * ch = "hello";
 	str s2(ch);
@@ -37,6 +37,10 @@ int main() {
 	
 	if(s2 != str(ch) || s3 != str(st) ) { return -1; }	
 
+	s1 = s2;
+	_s1 = str(ch);
+	
+	if(s1 != _s1) { return -1; }
 	
 	if(s2 > s3) { return -1; }
 	if(s2 >= s3) { return -1; }

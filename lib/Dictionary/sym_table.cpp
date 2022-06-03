@@ -18,61 +18,50 @@
 // ----- Internal (Recursive) Destructor -----
 
 void sym_table::deleteTree(node * cur) {
-   if(cur->left != NULL) {
-      this->deleteTree(cur->left);
-   }
+   if(cur->left != NULL) { this->deleteTree(cur->left); }
 
-   if(cur->right != NULL) {
-      this->deleteTree(cur->right);
-   }
+   if(cur->right != NULL) { this->deleteTree(cur->right); }
 
-   free(cur);
+   delete(cur);
 }
 
+
+void sym_table::assignTree(node * _this, node * other) {
+   if(cur->left != NULL) { this->deleteTree(cur->left); }
+
+   if(cur->right != NULL) { this->deleteTree(cur->right); }
+
+   delete(cur);
+}
 
 
 
 // ----- Internal (Recursive) Basic Operations -----
 
-bool sym_table::insert(node * cur, str & label, int strDepth) {
-   // insert
-   if(cur == NULL) {
-      std::cerr << "ERROR. CURRENT NODE IS NULL, WE SHOULDNT BE HERE\n";
-      return false;
-   }
-
-   char u, v;
-   while(true) {
-      v = cur->label[strDepth];
-      u = label[strDepth];
-
-      if(label[strDepth] == '\0') {
-         std::cout << "Duplicate label " << label << " found in dict. No action taken: " << strDepth << "\n";
-
-      } else if(u < v) {
-         if( cur->left == NULL) {
-            cur->left = new node {label, next_id++, NULL, NULL };
-         } else {
-            this->insert(cur->left, label);
-         }
-
-      } else if (u > v) {
-         if( cur->right == NULL) {
-            cur->right = new node {label, next_id++, NULL, NULL };
-         } else {
-            this->insert(cur->right, label);
-         }
-
-      } else {
-         strDepth++;
-         continue;
+bool sym_table::insert(node * cur, str & label) {
+	if(label == cur->label) {
+		std::cout << "Duplicate label " << label << " found in dict. No action taken.\n";
+	} 
+	else if (label < cur->label) {
+		if( cur->left == NULL) {
+			cur->left = new node {label, next_id++, NULL, NULL };
+      } 
+		else {
+			this->insert(cur->left, label);
       }
-      return true;
-   }
+	} 
+	else if (label > cur->label) {
+		if( cur->right == NULL) {
+         cur->right = new node {label, next_id++, NULL, NULL };
+      } 
+		else {
+         this->insert(cur->right, label);
+      }
+	} 
 }
 
 
-// bool remove(node * cur, str & label, int strDepth = 0);
+// bool remove(node * cur, str & label);
 
 // bool remove(node * cur, int id);
    
@@ -82,15 +71,11 @@ bool sym_table::insert(node * cur, str & label, int strDepth) {
 // ----- Internal (Recursive) Debug and Print Methods -----
 
 void sym_table::print(node * cur) {
-   if(cur->left != NULL) {
-      this->print(cur->left);
-   }
+   if(cur->left != NULL) { this->print(cur->left); }
 
-   std::cout << cur->label << "(" << cur->id << ")  ";
+   std::cout << cur->label << "(" << cur->id << ") ";
 
-   if(cur->right != NULL) {
-      this->print(cur->right);
-   }
+   if(cur->right != NULL) { this->print(cur->right); }
 }
 
 
@@ -101,14 +86,9 @@ void sym_table::printTree(node * cur, int depth) {
 
    std::cout << cur->label << "(" << cur->id << ")\n";
    
-   if(cur->left != NULL) {
-      this->printTree(cur->left, depth + 1);
-   }
+   if(cur->left != NULL) { this->printTree(cur->left, depth + 1); }
 
-
-   if(cur->right != NULL) {
-      this->printTree(cur->right, depth + 1);
-   }
+   if(cur->right != NULL) { this->printTree(cur->right, depth + 1); }
 }
 
 
@@ -117,14 +97,13 @@ void sym_table::printTree(node * cur, int depth) {
 // ----- Constructors, Destructors, and Overloaded Operators -----
 
 sym_table::~sym_table() {
-   if(root != NULL) {
-      this->deleteTree(root);
-   }
+   if(root != NULL) { this->deleteTree(root); }
 }
 
 
-sym_table & sym_table::operator=(const sym_table&) {
-   // WORK NEEDS TO BE DONE HERE
+sym_table & sym_table::operator=(const sym_table & other) {
+   // WORK NEEDS TO BE DONE HERE ------------
+
    return *this;
 }   
 

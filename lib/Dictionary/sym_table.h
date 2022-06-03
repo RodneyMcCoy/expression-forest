@@ -39,11 +39,12 @@ private:
 
 // ----- Internal (Recursive) Destructor -----
    void deleteTree(node * cur);
+	void assignTree(node * _this, node * other);
 
 
 // ----- Internal (Recursive) Basic Operations -----
-   bool insert(node * cur, str & label, int strDepth = 0);
-   bool remove(node * cur, str & label, int strDepth = 0);
+   bool insert(node * cur, str & label);
+   bool remove(node * cur, str & label);
    bool remove(node * cur, int id);
    
    
