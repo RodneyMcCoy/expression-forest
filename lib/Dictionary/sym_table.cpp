@@ -107,6 +107,18 @@ sym_table::~sym_table() {
 }
 
 
+sym_table::sym_table(const sym_table & other) {
+	if(other.root == NULL) {
+		root = NULL;
+	} else {
+		root = assignTree(other.root);
+	}
+
+	next_id = other.next_id;
+}
+
+
+
 sym_table & sym_table::operator=(const sym_table & other) {
 	if(other.root == NULL) {
 		root = NULL;

@@ -25,6 +25,7 @@ public:
 
 /* ----- Constructors, Destructors, Copy Assignment ----- */
 	str();
+	str(const str & input);
 	str(const char * input);
 	str(std::string input);
 	~str();
@@ -46,7 +47,7 @@ public:
 	char lookup(unsigned int id);
 	char * to_string();
 	
-	void debug() {std::cout << len << " " << sum << " " << *this << "\n" ;}
+	void debug() { std::cout << len << " " << sum << " " << *this << "\n" ;}
 	
 	friend std::ostream& operator<<(std::ostream& out, const str& other);
 	

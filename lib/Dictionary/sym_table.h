@@ -57,6 +57,7 @@ public:
 
 // ----- Constructors, Destructors, and Overloaded Operators -----
 	sym_table() : root(NULL), next_id(0) {}
+	sym_table(const sym_table & other);
 	~sym_table();
 	sym_table & operator=(const sym_table & other);  // Copy Assignment
    
