@@ -50,7 +50,7 @@ str::str(std::string input) : buf(new char[input.length()]), len(input.length())
 
 
 str::~str() {
-	delete(buf);
+	delete[] buf;
 }
 
 

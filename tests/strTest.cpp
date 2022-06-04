@@ -52,6 +52,7 @@ int main() {
 	
 	std::cout << smallString << " " << str("a") << "\n";
 	
+	
    return 0;
 }
  

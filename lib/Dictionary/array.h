@@ -38,7 +38,7 @@ public:
 	
 	
    ~array() {
-		delete(data);
+		delete[] data;
 	}
 	
 	

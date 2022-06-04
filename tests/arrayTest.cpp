@@ -24,7 +24,7 @@ int main() {
 	// a1.print();
 	
 	for(int i = 149; i >= 15; i--) {
-		if(a1.pop() != i) { return -i; }
+		if(a1.pop() != i) { return -1; }
 	}
 	
 	// a1.print();

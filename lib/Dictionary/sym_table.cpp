@@ -12,7 +12,7 @@
 #include <iostream>
 
 #include "sym_table.h"
-
+#include "str.h"
 
 
 // ----- Internal (Recursive) Destructor -----
