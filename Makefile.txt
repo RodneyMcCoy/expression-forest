@@ -1,0 +1,9 @@
+INCLUDES= -I./lib/Dictionary -I./lib/ExpressionTree -I./lib/Parser -I./test
+CFLAGS= -Wall -O3
+
+
+build:
+	echo "Build Command Ran. No behavior here yet"
+
+build_parser:
+	echo "Build Parser Command Ran. No behavior here yet"
