@@ -42,7 +42,7 @@ int main() {
 	s1.print();
 	std::cout << "\n";
 	
-	s2 = s1;
+	// s2 = s1;
 	
 	s2.insert(str("abcdefg"));
 	
@@ -57,5 +57,4 @@ int main() {
 	
 
 	return 0;
-	
 }

@@ -110,13 +110,11 @@ sym_table::~sym_table() {
 sym_table & sym_table::operator=(const sym_table & other) {
 	if(other.root == NULL) {
 		root = NULL;
-		next_id = 0;
-		return *this;
+	} else {
+		root = assignTree(other.root);
 	}
+
 	next_id = other.next_id;
-	
-	root = assignTree(other.root);
-	
 	return *this;
 }   
 
