@@ -15,6 +15,7 @@
 
 #include "array.h"
 #include "dict.h"
+#include "str.h"
 
 
 template <typename Type>
@@ -49,9 +50,9 @@ private:
 
 // ----- Other Members and Methods -----
 
-   char * treeLabel;
+   str treeLabel;
    bool defined; // assigned false if previous evaluation of expr tree had a function undefined
-   void evaluateSubExpr(array< expr<Type>* > parents); // for nested expr trees. Throws error if a nest expr tree has label contained in parents
+   void evaluateSubExpr(array< expr<Type>* > parents); // for nested expr trees. Throws error if a nested expr tree refers to another.
 
 
 
@@ -77,6 +78,7 @@ public:
 
    expr(char * str = NULL, bool isReal=true);   // construct tree. If arg given, calls initString with str
    ~expr();                                     // manualy deallocate each vertex in tree
+	expr(const expr<Type> & other);					// copy constructor
    expr operator=(const expr&);                 // copy assignment (=), copys one expression tree to another
 
 
@@ -101,15 +103,11 @@ public:
 
 // ----- Simplifies The Expression Tree -----
 
-   // expr<Type> & simplifyOther();
-   // void sipmlifySelf();
+   // void sipmlify();
 
 
 
 };
-
-
-// Function Definitions Predefined Here
 
 
 #include "expr.cpp"

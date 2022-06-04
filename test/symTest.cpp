@@ -8,6 +8,7 @@
  */
 
 #include <iostream>
+#include <string>
 #include "sym_table.h"
 #include "str.h"
 
@@ -26,27 +27,23 @@ int main() {
 	
 	sym_table s1, s2;
 	
-	for(int i = 0; i < 10; i++) {
+	for(int i = 0; i < 26; i++) {
 		s1.insert(str(buf[i]));
 	}
 	
-	s1.insert(str("__"));
+	std::string _s_ = "asdfghjkl";
 	
-	s1.print();
-	std::cout << "\n";
-	
-	for(int i = 10; i < 26; i++) {
-		s1.insert(str(buf[i]));
-	}
+	s1.insert(_s_);
 	
 	s1.print();
 	std::cout << "\n";
 	
 	s2 = s1;
 	
-	s2.insert(str("abcdefg"));
+	s2.insert("abcdefg");
 	s2.remove("__");
 	s2.remove(0);
+	
 	
 	for(int i = 26; i < 52; i++) {
 		s1.insert(str(buf[i]));

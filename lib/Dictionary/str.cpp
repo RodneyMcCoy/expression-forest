@@ -27,11 +27,12 @@ std::ostream& operator<<(std::ostream& out, const str& other) {
 str::str() : buf(NULL), len(0), sum(0) { }
 
 
-str::str(const str & input) : buf(new char[input.len]), len(input.len), sum(input.sum) {}
+str::str(const str & input) : buf(new char[input.len]), len(input.len), sum(input.sum) {
+	for(int i = 0; i < len; i++) { buf[i] = input.buf[i]; }
+}
 	
 	
 str::str(const char * input) : buf(NULL), len(0), sum(0) {
-	// Get Length
 	while(input[len] != '\0') { 
 		sum += input[len];
 		len++;
