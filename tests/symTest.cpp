@@ -33,14 +33,14 @@ int main() {
 	s1.insert(str("__"));
 	
 	s1.print();
-	cout << "\n";
+	std::cout << "\n";
 	
 	for(int i = 10; i < 26; i++) {
 		s1.insert(str(buf[i]));
 	}
 	
 	s1.print();
-	cout << "\n";
+	std::cout << "\n";
 	
 	s2 = s1;
 	
@@ -51,9 +51,9 @@ int main() {
 	}
 	
 	s1.print();
-	cout << "\n";
+	std::cout << "\n";
 	s2.print();
-	cout << "\n";
+	std::cout << "\n";
 	
 
 	return 0;
