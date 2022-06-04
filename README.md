@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="logo.jpg" alt="Logo" width="80">
+    <img src="logo.jpg" alt="Logo" width="50">
   </a>
 
 <h3 align="center">C++ Expression Tree Template Library</h3>
@@ -18,7 +18,7 @@
 
 
 <!-- TABLE OF CONTENTS -->
-<summary>Table of Contents</summary>
+## Table of Contents
 <ol>
   <li><a href="#about-the-project">About The Project</a></li>
   
@@ -28,7 +28,6 @@
   <li><a href="#roadmap">Roadmap</a></li>
   <li><a href="#license">License</a></li>
   <li><a href="#contact">Contact</a></li>
-  <li><a href="#acknowledgments">Acknowledgments</a></li>
 </ol>
 
 
@@ -36,8 +35,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[Product Name Screen Shot][product-screenshot]](https://example.com)
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
@@ -81,8 +78,30 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <!-- ROADMAP -->
 ## Roadmap
-
-- [ ] Actual Build the Expression Tree Template
+- [ ] Impliment Lex / Yacc parser
+- [ ] Impliment Dictionary Template (Combination of Symbol Table and Array Template)
+- [ ] Impliment Actual Expr Tree Template
+  - [ ] Assing variables and evaluate Expr Tree
+  - [ ] Make references to differente Expr Trees
+  - [ ] Define Functions
+- [ ] Add non necessary but time complexity improving AVL Tree specific operations to sym_table class
+  - [ ] Add 4 Rotation Operations into insert method
+  - [ ] Complete actual removal operation
+- [ ] Clean up repository
+  - [ ] Beautify README
+  - [ ] Add more verbose documentation to source code
+  - [ ] Add usage examples (instantate new template type, use parser, etc)
+- [ ] Optional Expr Tree Improvements
+  - [ ] Helper methods for Symbolic Regression
+  - [ ] Non parser related methods for intializing Expr Tree's
+  - [ ] Methods to modify expression trees
+- [ ] Simplification Techniques
+  - [ ] Removing redundant vertices in Expr Trees (Identities, adding by zero, mutlplying by one)
+  - [ ] Apply distributive property to decrease multiplications
+  - [ ] Apply hyperoperations (x + x turns into 2x), (x*x*x turns into x^3)
+  - [ ] Factoring Polynomials
+  - [ ] Evaluating / Simplifying Trig identities
+  - [ ] Find repeated sub trees in Expr Tree, and evaluate them one time, save the results
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
