@@ -45,6 +45,8 @@ int main() {
 	s2 = s1;
 	
 	s2.insert(str("abcdefg"));
+	s2.remove("__");
+	s2.remove(0);
 	
 	for(int i = 26; i < 52; i++) {
 		s1.insert(str(buf[i]));

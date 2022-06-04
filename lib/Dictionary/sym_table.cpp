@@ -67,11 +67,47 @@ bool sym_table::insert(node * cur, str & label) {
 }
 
 
-// bool remove(node * cur, str & label);
+bool sym_table::remove(node * cur, str & label) {
+	if(label == cur->label) {
+		// remove label here
+		
+		return true;
+	} 
+	
+	if (label < cur->label && cur->left != NULL) { return remove(cur->left, label); }
+	
+	if (label > cur->label && cur->right != NULL) { return remove(cur->right, label); }
+	
+	return false;	
+}
 
-// bool remove(node * cur, int id);
+
+bool sym_table::remove(node * cur, int id) {
+	if(id == cur->id) {
+		// remove label here
+		
+		return true;
+	} 
+	
+	if (cur->left != NULL) { return remove(cur->left, id); }
+	
+	if (cur->right != NULL) { return remove(cur->right, id); }
+	
+	return false;
+}
    
-   
+	
+int sym_table::lookup(node * cur, str & label) {
+	if(label == cur->label) { return cur->id; } 
+	
+	if (label < cur->label && cur->left != NULL) { return lookup(cur->left, label); }
+	
+	if (label > cur->label && cur->right != NULL) { return lookup(cur->right, label); }
+	
+	return -1;	
+}
+
+
 
 
 // ----- Internal (Recursive) Debug and Print Methods -----
@@ -148,20 +184,21 @@ bool sym_table::insert(str label) {
 
 
 bool sym_table::remove(str label) {
-   // remove
-   return true;
+   if(root == NULL) { return false; }
+	return remove(root, label);
 }
 
 
 bool sym_table::remove(int id) {
-   return true;
+   if(root == NULL) { return false; }
+	return remove(root, id);
 }
-
 
 int sym_table::lookup(str label) {
-   // WORK NEEDS TO BE DONE HERE
-   return 0;
+   if(root == NULL) { return -1; }
+  	return lookup(root, label);
 }
+
 
 
 

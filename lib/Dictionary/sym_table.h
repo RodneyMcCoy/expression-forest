@@ -46,7 +46,8 @@ private:
    bool insert(node * cur, str & label);
    bool remove(node * cur, str & label);
    bool remove(node * cur, int id);
-   
+	int lookup(node * cur, str & label);
+
    
 // ----- Internal (Recursive) Debug and Print Methods -----
    void print(node * cur);
