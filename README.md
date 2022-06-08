@@ -11,7 +11,7 @@
 <h3 align="center">C++ Expression Tree Template Library</h3>
 
   <p align="center">
-    This is a super cool Expression Tree Template Library. Fork the repository and explicitly instantate a expression tree template with any underlying data type you want, define functions for that data type, and have some fun (obviously if you want to break it, you can. Dont try making an expression tree of function pointers)
+    This is an Expression Tree Template Library made in C++ with classes and a parser to support an explicitly instantiated Expression Tree Template. The parser allows taking a function as input from the user and converting it into an Expression Tree instance, giving a highly time optimized evaluatable expression tree that is executable in C++ code. Methods are also designed to impliment and assist in other expression tree related projects like symbollic regression.
   </p>
 </div>
 
@@ -20,25 +20,12 @@
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 <ol>
-  <li><a href="#about-the-project">About The Project</a></li>
-  
   <li><a href="#getting-started">Getting Started</a></li>
-
   <li><a href="#usage">Usage</a></li>
   <li><a href="#roadmap">Roadmap</a></li>
   <li><a href="#license">License</a></li>
   <li><a href="#contact">Contact</a></li>
 </ol>
-
-
-
-
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
@@ -66,9 +53,7 @@ Make sure you have the proper prequisits installed on your machine.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+Once implimented, it will give examples on use cases for the expresison tree template, along with instructions of how to modify the parser and explicitly instantate expression trees with differeing underlying types.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -78,30 +63,30 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <!-- ROADMAP -->
 ## Roadmap
-- [ ] Impliment Lex / Yacc parser
-- [ ] Impliment Dictionary Template (Combination of Symbol Table and Array Template)
-- [ ] Impliment Actual Expr Tree Template
-  - [ ] Assing variables and evaluate Expr Tree
-  - [ ] Make references to differente Expr Trees
-  - [ ] Define Functions
-- [ ] Add non necessary but time complexity improving AVL Tree specific operations to sym_table class
+- [ ] Impliment the Lex / Yacc parser.
+- [ ] Impliment the Dictionary Template (Combination of Symbol Table and Array Template).
+- [ ] Impliment the Actual Expression Tree Template.
+  - [ ] Add methods like assing values to variables and evaluating the Expression Tree.
+  - [ ] Allow expression trees to reference and evaluate other expression trees.
+  - [ ] Allow the defining of functions for each expression tree template type.
+- [ ] Add the non-necessary but time complexity improving AVL Tree specific operations to sym_table class
   - [ ] Add 4 Rotation Operations into insert method
   - [ ] Complete actual removal operation
-- [ ] Clean up repository
-  - [ ] Beautify README
-  - [ ] Add more verbose documentation to source code
-  - [ ] Add usage examples (instantate new template type, use parser, etc)
-- [ ] Optional Expr Tree Improvements
-  - [ ] Helper methods for Symbolic Regression
-  - [ ] Non parser related methods for intializing Expr Tree's
-  - [ ] Methods to modify expression trees
-- [ ] Simplification Techniques
-  - [ ] Removing redundant vertices in Expr Trees (Identities, adding by zero, mutlplying by one)
-  - [ ] Apply distributive property to decrease multiplications
-  - [ ] Apply hyperoperations (x + x turns into 2x), (x*x*x turns into x^3)
-  - [ ] Factoring Polynomials
+- [ ] Clean up the repository.
+  - [ ] Beautify the README.
+  - [ ] Add more verbose documentation to source code.
+  - [ ] Add usage examples (how to instantate new template type, use and modify the parser, etc)
+- [ ] Add optional Expression Tree Improvements
+  - [ ] Helper methods for Symbolic Regression.
+  - [ ] Non parser related methods for intializing Expression Tree's (Series, Products, etc).
+  - [ ] Methods to allow user to manually  modify expression trees.
+- [ ] Various Simplification Techniques.
+  - [ ] Removing redundant vertices in Expr Trees (Identities, adding by zero, mutlplying by one, inverse function applications).
+  - [ ] Apply distributive property to decrease multiplication counts.
+  - [ ] Apply hyperoperations (x + x turns into 2x), (x*x*x turns into x^3).
   - [ ] Evaluating / Simplifying Trig identities
-  - [ ] Find repeated sub trees in Expr Tree, and evaluate them one time, save the results
+  - [ ] Factoring Polynomials.
+  - [ ] Find repeated sub trees in a givenExpression Tree, and evaluating them one time, saving the results, and plugging it in at each location of the sub tree in the parent expression tree.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
