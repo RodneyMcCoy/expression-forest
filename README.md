@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="logo.jpg" alt="Logo" width="50">
+    <img src="icon.jpg" alt="Logo" width="300">
   </a>
 
 <h3 align="center">C++ Expression Tree Template Library</h3>
