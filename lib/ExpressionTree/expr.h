@@ -60,26 +60,27 @@ public:
 
 // ----- Main Class Functionality -----
 
-   bool assign(char * label, Type val);   // Assigns the leaf label the value val
+   bool assign(str label, Type val);   // Assigns the leaf label the value val
    bool assign(int id, Type val);         // Assings the leaf with index label the value val
 
-   bool define(char * label, Type(*function)(Type), bool(*domain)(Type) = NULL);
-   bool define(char * label, Type(*function)(Type,Type), bool(*domain)(Type,Type) = NULL);
+   bool define(str label, Type(*function)(Type), bool(*domain)(Type) = NULL);
+   bool define(str label, Type(*function)(Type,Type), bool(*domain)(Type,Type) = NULL);
 
-   int index(char * label);
+   int index(str label);
 
    Type operator()();                        // Evaluates Expr Tree
-   Type operator()(char * label, Type val);  // Assign given label the value, then evaluate tree
+   Type operator()(str label, Type val);  // Assign given label the value, then evaluate tree
    Type operator()(int id, Type val);        // Assign given ID the value, then evaluate tree
 
    
 
 // ----- Constructors, Destructors, and Copy Assignment -----
 
-   expr(char * str = NULL, bool isReal=true);   // construct tree. If arg given, calls initString with str
-   ~expr();                                     // manualy deallocate each vertex in tree
-	expr(const expr<Type> & other);					// copy constructor
-   expr operator=(const expr&);                 // copy assignment (=), copys one expression tree to another
+   expr();
+   expr(str input = NULL);   
+	 expr(const expr<Type> & other);	
+   ~expr();                         
+   expr operator=(const expr&);     // copy assignment (=), copys one expression tree to another
 
 
 
